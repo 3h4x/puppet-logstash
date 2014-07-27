@@ -42,6 +42,9 @@ class logstash::java {
       'OpenSuSE': {
         $package = 'java-1_6_0-openjdk'
       }
+      'Slackware': {
+        fail("\"${module_name}\" provides no java package
+              for \"${::operatingsystem}\". Check official docs http://docs.slackware.com/howtos:software:java")
       default: {
         fail("\"${module_name}\" provides no java package
               for \"${::operatingsystem}\"")
